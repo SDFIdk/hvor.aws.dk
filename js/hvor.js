@@ -4,10 +4,10 @@ $(function() {
 	$.support.cors= true; //pga. IE
 
 
-  var host= "https://dawa.aws.dk/";
+  var host= "https://api.dataforsyningen.dk/";
   let miljø= getQueryVariable('m');
   if (miljø) {
-    host= host.replace('dawa',miljø); 
+    host= host.replace('api',miljø); 
   } 
 
   function getQueryVariable(variable) {
@@ -161,7 +161,7 @@ $(function() {
       		var style=  getDefaultStyle(data);
 		      var geojsonlayer= L.geoJson(data, {style: getDefaultStyle, pointToLayer: pointToLayer(style)});
           geojsonlayer.on({
-            click: function (e) {window.location.href= options.url.replace('dawa','info');}
+            click: function (e) {window.location.href= options.url.replace('api','info');}
           });
 		      geojsonlayer.addTo(map);
 
@@ -244,7 +244,7 @@ $(function() {
               var style=  getDefaultStyle(data);
               var geojsonlayer= L.geoJson(data, {style: getDefaultStyle, pointToLayer: pointToLayer(style)});
               geojsonlayer.on({
-                click: function (e) {window.location.href= options.url.replace('dawa','info');}
+                click: function (e) {window.location.href= options.url.replace('api','info');}
               });
               geojsonlayer.addTo(map);
 
